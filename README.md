@@ -66,7 +66,7 @@ This section provide clear understand about what you must do for the project to 
 <summary><strong style="font-size: 15px;">Firebase data structure</strong></summary>
 <br>
 
-this is how your json file you exported from real-time database from firebase should look like:
+This is how your json file you exported from real-time database from firebase, should look like:
 
 ``` bash
 {
@@ -121,7 +121,7 @@ from flaskapp import routes
 <details>
 <summary><strong style="font-size: 15px;">flaskapp/serviceAccountKey.json</strong></summary>
 <br>
-This can downloaded from your Firebase Settings, it looks like this:
+This can be downloaded from your Firebase Settings, it looks like this:
 <br>
 
 ```bash
