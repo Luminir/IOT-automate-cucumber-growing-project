@@ -1,0 +1,160 @@
+{% extends "navbar.html" %}
+{% block content %}
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6">
+        <div class="card">
+          <div class="content">
+            <div class="row">
+              <div class="col-xs-3">
+                <div class="icon-big icon-danger text-center">
+                  <i class="fas fa-temperature-high"></i>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <div class="numbers">
+                  <p>Temperature</p>
+                  <span id="tempValue"></span> &#176;C
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="card">
+          <div class="content">
+            <div class="row">
+              <div class="col-xs-3">
+                <div class="icon-big icon-info text-center">
+                  <i class="fas fa-tint"></i>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <div class="numbers">
+                  <p>Humidity</p>
+                  <span id="humValue"></span><span> %</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="card">
+          <div class="content">
+            <div class="row">
+              <div class="col-xs-3">
+                <div class="icon-big icon-success text-center">
+                  <i class="fas fa-seedling"></i>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <div class="numbers">
+                  <p>Soil Moisture</p>
+                  <span id="soilValue"></span><span> %</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-sm-6">
+        <div class="card">
+          <div class="content">
+            <div class="row">
+              <div class="col-xs-3">
+                <div class="icon-big icon-warning text-center">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <div class="numbers">
+                  <p>Brightness Level</p>
+                  <span id="lightValue"></span><span> %</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Automated Watering</h4>
+          </div>
+          <div class="content">
+            <center>
+              <label class="toggleBtn">
+                <input class="switch-input" id="autoSwitch" type="checkbox" onclick="auto()" />
+                <span class="switch-label switch-label-water" data-on="on" data-off="off"></span>
+                <span class="switch-handle"></span>
+              </label>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 manual-water-div">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Manual Watering</h4>
+          </div>
+          <div class="content">
+            <center>
+              <label class="toggleBtn">
+                <input class="switch-input switch2-input" id="manualWaterSwitch" type="checkbox" onclick="manual()" />
+                <span class="switch-label switch2-label switch-manual-water" data-on="on" data-off="off"></span>
+                <span class="switch-handle switch2-handle"></span>
+              </label>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Automated Light</h4>
+          </div>
+          <div class="content">
+            <center>
+              <label class="toggleBtn">
+                <input class="switch-input" id="autoSwitch2" type="checkbox" onclick="auto2()" />
+                <span class="switch-label switch-label-led" data-on="on" data-off="off"></span>
+                <span class="switch-handle"></span>
+              </label>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 manual-light-div">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Manual Light</h4>
+          </div>
+          <div class="content">
+            <center>
+              <label class="toggleBtn">
+                <input class="switch-input switch2-input" id="manualLedSwitch" type="checkbox" onclick="manual2()" />
+                <span class="switch-label switch2-label switch-manual-light" data-on="on" data-off="off"></span>
+                <span class="switch-handle switch2-handle"></span>
+              </label>
+            </center>
+          </div>
+        </div>
+      </div>
+      <a href="{{ url_for('fetch_sensor_data_page') }}" class="btn btn-info">Fetch Sensor Data</a>
+    </div>
+
+
+  </div>
+</div>
+{% endblock content %}

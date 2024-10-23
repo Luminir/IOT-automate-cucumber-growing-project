@@ -1,0 +1,37 @@
+{% extends "navbar.html" %}
+{% block content %}
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <h2>Live Image of the Plant:</h2>
+      <div class="live-footage" style="display: flex; justify-content: center; align-items: center; min-height: 50vh;">
+        <img id="liveImage" src="" alt="Live Image" style="max-width: 100%; height: auto;" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    function fetchLiveImage() {
+        fetch('/api/get_live_image')
+            .then(response => response.json())
+            .then(data => {
+                if (data.image_url) {
+                    document.getElementById('liveImage').src = data.image_url;
+                } else {
+                    console.error('Error fetching image URL:', data.error);
+                }
+            })
+            .catch(error => console.error('Error fetching live image:', error));
+    }
+
+    // Fetch the live image every 15 seconds
+    setInterval(fetchLiveImage, 15000);
+
+    // Initial fetch
+    fetchLiveImage();
+</script>
+{% endblock content %}
+
+
+

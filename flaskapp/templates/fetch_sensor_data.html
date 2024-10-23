@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to fetch sensor data
+        function fetchSensorData() {
+            $.ajax({
+                url: "/api/fetch_sensor_data", // API endpoint
+                type: "GET",
+                success: function(data) {
+                    console.log("Fetched data:", data);
+
+                    // Assuming temperature data is under "DHT11.temperature"
+                    if (data.DHT11 && data.DHT11.temperature) {
+                        $('#temperature').text(data.DHT11.temperature);
+                    }
+
+                    if (data.Moisture_sensor && data.Moisture_sensor.sensor_1) {
+                        $('#moisture_sensor_1').text(data.Moisture_sensor.sensor_1);
+                    }
+
+                    if (data.BH1750 && data.BH1750.lux) {
+                        $('#lux').text(data.BH1750.lux);
+                    }
+                },
+                error: function(error) {
+                    console.error("Error fetching sensor data:", error);
+                }
+            });
+        }
+
+        // Call fetchSensorData function every 30 seconds (30000 ms)
+        setInterval(fetchSensorData, 30000);
+
+        // Fetch data immediately when page loads
+        $(document).ready(function() {
+            fetchSensorData();
+        });
+    </script>
+</head>
+<body>
+    <div style=" color:black">
+        <h1>Real-time Sensor Data</h1>
+        <p>Temperature: <span id="temperature">Loading...</span> °C</p>
+        <p>Moisture Sensor 1: <span id="moisture_sensor_1">Loading...</span></p>
+        <p>Light (Lux): <span id="lux">Loading...</span></p>
+    </div>
+</body>
+</html>
+

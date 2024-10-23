@@ -1,0 +1,6 @@
+__pycache__
+firebase_env/
+__init__.py
+*.json
+.env
+routes.py

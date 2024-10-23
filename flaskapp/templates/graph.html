@@ -1,0 +1,118 @@
+{% extends "navbar.html" %}
+{% block content %}
+<div class="content">
+  <div class="container-fluid">
+    <!-- Switch between data -->
+    <div class="row" style="padding-bottom: 20px;">
+      <div class="col-md-12 text-center">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active" id="realTimeBtn">
+            <input type="radio" name="options" autocomplete="off" checked> Real-Time Data
+          </label>
+          <label class="btn btn-primary" id="pastRecordsBtn">
+            <input type="radio" name="options" autocomplete="off"> View Past Records
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div id="realTimeData">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Temperature</h4>
+              <p class="category">Realtime temperature reading</p>
+            </div>
+            <div class="content">
+              <canvas id="tempChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Humidity</h4>
+              <p class="category">Realtime humidity reading</p>
+            </div>
+            <div class="content">
+              <canvas id="humChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Soil Moisture Level</h4>
+              <p class="category">Realtime soil moisture level reading</p>
+            </div>
+            <div class="content">
+              <canvas id="soilChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Light Level</h4>
+              <p class="category">Realtime light level reading</p>
+            </div>
+            <div class="content">
+              <canvas id="lightChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pastRecordsData" style="display: none;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Temperature</h4>
+              <p class="category">Realtime temperature reading</p>
+            </div>
+            <div class="content">
+              <canvas id="tempPastChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Humidity</h4>
+              <p class="category">Realtime humidity reading</p>
+            </div>
+            <div class="content">
+              <canvas id="humPastChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Soil Moisture Level</h4>
+              <p class="category">Realtime soil moisture level reading</p>
+            </div>
+            <div class="content">
+              <canvas id="soilPastChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Light Level</h4>
+              <p class="category">Realtime light level reading</p>
+            </div>
+            <div class="content">
+              <canvas id="lightPastChart" class="ct-chart ct-major-twelfth"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='img/logo.png') }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  {% if title %}
+  <title>Cucumber Smart Garden - {{ title }}</title>
+  {% else %}
+  <title>Cucumber Smart Garden</title>
+  {% endif %}
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Main CSS -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/paper-dashboard.css') }}" rel="stylesheet" />
+  <!-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='css/themify-icons.css') }}" rel="stylesheet">
+
+  <!-- <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script> -->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    {% block navbar %}{% endblock navbar %}
+  </div>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+
+  <script>
+    // Fetch Firebase service account details
+    fetch('/api/firebase-config')
+      .then(response => response.json())
+      .then(config => {
+        // Initialize Firebase with fetched config
+        const app = firebase.initializeApp(config);
+        const auth = firebase.auth();
+        const database = firebase.database();
+  
+        // Now you can use Firebase services
+        console.log("Firebase initialized with config:", config);
+      })
+      .catch(error => console.error('Error fetching Firebase config:', error));
+  </script>
+
+  <!-- HTML functions -->
+  <script src="{{ url_for('static', filename='js/toggle.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/data-toggle-btn.js') }}"></script>
+
+  <!-- Graph -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-adapter-moment/1.1.0/chartjs-adapter-moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.2.1"></script>
+
+<!--   Core JS Files   -->
+<script src="{{ url_for('static', filename='js/getData.js') }}" type="text/javascript"></script>
+
+<script src="{{ url_for('static', filename='js/graphy.js') }}" type="text/javascript"></script> <!-- Sơn custom script -->
+<script src="{{ url_for('static', filename='js/graphyPast.js') }}" type="text/javascript"></script> <!-- Sơn custom script -->
+</body>
+
+
+
+
+<!--  Checkbox, Radio & Switch Plugins -->
+<!-- <script src="{{ url_for('static', filename='js/bootstrap-checkbox-radio.js') }}"></script> -->
+
+<!--  Charts Plugin -->
+<!-- <script src="{{ url_for('static', filename='js/chartist.min.js') }}"></script>-->
+
+<!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+<!-- <script src="{{ url_for('static', filename='js/paper-dashboard.js') }}"></script> -->
+
+<!--   Main JS File   -->
+<!-- <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script> -->
+
+</html>
