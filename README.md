@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/11d46f17-8e46-44b6-b52c-6fdcc4bdf04c)
 
 # Cucumber Smart Farm:
 ## An Internet of Things (IoT) project
@@ -431,16 +431,21 @@ node uploadToMongo.js
 ## Images 📷
 Final set up:
 
-![Final setup](https://user-images.githubusercontent.com/38778609/111861169-35bb7500-8987-11eb-99ca-5d8c80796d1d.png)
+
 
 #### Web page
 Dashboard:
+![image](https://github.com/user-attachments/assets/2e19062a-0523-4384-a4c2-9f5ef16fa941)
 
-![Dashboard](https://user-images.githubusercontent.com/38778609/111861192-5d124200-8987-11eb-9ea9-3233efa1a000.png)
+Real-time Graph:
+![image](https://github.com/user-attachments/assets/7b64e170-a98b-436b-82ae-a4994251623b)
 
-Graph:
+Past records Graph:
+![image](https://github.com/user-attachments/assets/d0955931-461b-47e1-8d97-d64357d69603)
 
-![Graph](https://user-images.githubusercontent.com/38778609/111861235-a793be80-8987-11eb-8d69-3b1314753eb9.png)
+Live View:
+![image](https://github.com/user-attachments/assets/46a18a04-6164-46d9-97e5-7d7b4aceb453)
+
 
 
 
