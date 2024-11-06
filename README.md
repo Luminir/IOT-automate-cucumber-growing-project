@@ -5,7 +5,7 @@
 ### _A Hanoi University & Kosen Highschool IoT 2024 Project_
 
 
-#### Author: Quang Huy, Trần Nam Sơn, Ayumu???
+#### Author: Vương Quang Huy, Trần Nam Sơn, Ayumu???
 
 Check out the summarize video [here](https://drive.google.com/file/d/17wveAPD-P5UhWxB83sp1jmsj6D-eo9nN/view?usp=sharing)
 
