@@ -34,11 +34,11 @@ This section outlines the comprehensive structure and the overall setup steps re
 
 <br/>
 <details>
-<summary><strong style="font-size: 17px;">Setup the project's hardware ( UNFINISHED )</strong></summary>
+<summary><strong style="font-size: 17px;">Setup the project's hardware ( AYUMU CODES - contact https://github.com/grreatmoon )</strong></summary>
 <br>
 
     1. Set up Arduino IDE
-    2. (Still unfinished)
+    2. ESP32
 
 </details>
 
